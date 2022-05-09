@@ -1,0 +1,53 @@
+# 1.2 旋转大气运动的基本方程
+
+## 专业名词
+
+惯性坐标系：上帝视角
+
+旋转坐标系：人类视角，随地球一块转动
+
+## 四大定律
+
+### 牛顿第二定律
+
+$$
+(\frac{d V_a}{d t})_{a}=\vec{g}_{m} -\frac{1}{\rho}\nabla p_{a} + \vec{F}_{a}
+$$
+
+- $\vec{g}_{m}$：重力
+
+- $-\frac{1}{\rho}\nabla p_{a}$：气压梯度力
+
+- $\vec{F}_{a}$：摩擦力，$\vec{F}_{a} \equiv \gamma \nabla^{2} \vec{V}_{a}+\frac{\gamma}{3} \nabla\left(\nabla \cdot \vec{V}_{a}\right)$
+
+### 质量守恒定律
+
+$$
+\left(\frac{\partial \rho}{\partial t}\right)_{a}+(\nabla \cdot \rho \vec{V}_a)_{a}=0
+$$
+
+- 拉格朗日观点：以移动的体积元为研究对象
+
+$$
+(\frac{d \rho}{\partial t})_{a}+\rho \nabla \cdot  \vec{V}_{a}=0
+$$
+
+- 欧拉观点：以固定空间为研究对象
+
+$$
+\left(\frac{\partial \rho}{\partial t}\right)_{a}+(\nabla \cdot \rho \vec{V}_a)_{a}=0
+$$
+
+`拉格朗日观点`和`欧拉观点`是同一事物的两种不同描述。证明：
+$$
+   \begin{align}
+      \frac{\partial \rho}{\partial t}+\nabla \cdot (\rho \vec{V}) &=0  \\\\
+      (\frac{\partial \rho}{\partial t} + \vec{V} \nabla  \cdot \rho) + \rho \nabla\cdot\vec{V} &=0 \notag \\\\
+      \frac{d \rho}{\partial t} +\rho \nabla \cdot  \vec{V} &=0 \notag
+   \end{align}
+$$
+
+其中，$\nabla\cdot$：是求梯度的符号
+
+> 详细证明过程见 葛朝霞, 2013, 章节4.7, P103
+
