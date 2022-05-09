@@ -140,7 +140,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Practical Smoothing, The Joys of P-splines</a></li>
+<li><a href="./">CUG水文气象学</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>前言</a><ul>
@@ -149,6 +149,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#thinking"><i class="fa fa-check"></i>bookdown使用心得</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#author"><i class="fa fa-check"></i>作者简介</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#reference"><i class="fa fa-check"></i>参考文献</a></li>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#pandoc"><i class="fa fa-check"></i><b>0.1</b> pandoc</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="旋转大气运动的基本方程.html"><a href="旋转大气运动的基本方程.html"><i class="fa fa-check"></i><b>1</b> 1.2 旋转大气运动的基本方程</a><ul>
 <li class="chapter" data-level="1.1" data-path="旋转大气运动的基本方程.html"><a href="旋转大气运动的基本方程.html#专业名词"><i class="fa fa-check"></i><b>1.1</b> 专业名词</a></li>
@@ -225,6 +226,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 
 </div>
+<div id="pandoc" class="section level2 hasAnchor">
+<h2><span class="header-section-number">0.1</span> pandoc<a href="index.html#pandoc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>下载pandoc和pandoc-crossref，二者的版本要对应起来，否则编译会出错。</p>
+<ul>
+<li><code>pandoc</code>: <a href="https://github.com/jgm/pandoc/releases" class="uri">https://github.com/jgm/pandoc/releases</a></li>
+<li><code>pandoc-crossref</code>: <a href="https://github.com/lierdakil/pandoc-crossref/releases" class="uri">https://github.com/lierdakil/pandoc-crossref/releases</a></li>
+</ul>
+<p>在markdown文件中：</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb3-1"><a href="index.html#cb3-1"></a><span class="ss">$$</span></span>
+<span id="cb3-2"><a href="index.html#cb3-2"></a><span class="er">\begin{align}</span><span class="ss">       </span></span>
+<span id="cb3-3"><a href="index.html#cb3-3"></a><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> </span><span class="sc">\rho</span><span class="ss">}{</span><span class="sc">\partial</span><span class="ss"> t}+</span><span class="sc">\nabla</span><span class="ss"> </span><span class="sc">\cdot</span><span class="ss"> (</span><span class="sc">\rho</span><span class="ss"> </span><span class="sc">\vec</span><span class="ss">{V}) &amp;= 0 </span><span class="sc">\\</span></span>
+<span id="cb3-4"><a href="index.html#cb3-4"></a><span class="ss">(</span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> </span><span class="sc">\rho</span><span class="ss">}{</span><span class="sc">\partial</span><span class="ss"> t} + </span><span class="sc">\vec</span><span class="ss">{V} </span><span class="sc">\nabla</span><span class="ss"> </span><span class="sc">\cdot</span><span class="ss"> </span><span class="sc">\rho</span><span class="ss">) + </span><span class="sc">\rho</span><span class="ss"> </span><span class="sc">\nabla\cdot\vec</span><span class="ss">{V} &amp;=0</span></span>
+<span id="cb3-5"><a href="index.html#cb3-5"></a><span class="er">\end{align}</span></span>
+<span id="cb3-6"><a href="index.html#cb3-6"></a><span class="ss">$$</span></span>
+<span id="cb3-7"><a href="index.html#cb3-7"></a>{#eq:description}</span></code></pre></div>
+<p><span class="math display">\[
+\begin{align}       
+\frac{\partial \rho}{\partial t}+\nabla \cdot (\rho \vec{V}) &amp;= 0 \\
+(\frac{\partial \rho}{\partial t} + \vec{V} \nabla \cdot \rho) + \rho \nabla\cdot\vec{V} &amp;=0
+\end{align}
+\]</span>
+{#eq:description}</p>
+<p>在命令行中：</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb4-1"><a href="index.html#cb4-1"></a><span class="co">## powershell</span></span>
+<span id="cb4-2"><a href="index.html#cb4-2"></a><span class="co"># word</span></span>
+<span id="cb4-3"><a href="index.html#cb4-3"></a>pandoc .\00-typora配置说明.<span class="fu">Rmd</span> --reference-doc=inst\numbered-sections.<span class="fu">docx</span> `</span>
+<span id="cb4-4"><a href="index.html#cb4-4"></a>  --filter pandoc-crossref --css .\inst\base.<span class="fu">user</span>.<span class="fu">css</span> -o hello.<span class="fu">docx</span>; .\hello.<span class="fu">docx</span></span>
+<span id="cb4-5"><a href="index.html#cb4-5"></a></span>
+<span id="cb4-6"><a href="index.html#cb4-6"></a><span class="co"># pdf</span></span>
+<span id="cb4-7"><a href="index.html#cb4-7"></a>pandoc .\00-typora配置说明.<span class="fu">Rmd</span> -f markdown --reference-doc=inst\numbered-sections.<span class="fu">docx</span> `</span>
+<span id="cb4-8"><a href="index.html#cb4-8"></a>  --filter pandoc-crossref --css .\inst\base.<span class="fu">user</span>.<span class="fu">css</span> -o hello.<span class="fu">pdf</span>; .\hello.<span class="fu">pdf</span></span></code></pre></div>
+
+</div>
 </div>
             </section>
 
@@ -263,7 +297,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rpkgs/JOPSbook/edit/master/index.Rmd",
+"link": "https://github.com/CUG-hydro/CUG-HydroMeteorology/edit/master/index.Rmd",
 "text": "Edit"
 },
 "history": {

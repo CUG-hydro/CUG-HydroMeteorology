@@ -140,7 +140,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Practical Smoothing, The Joys of P-splines</a></li>
+<li><a href="./">CUG水文气象学</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>前言</a><ul>
@@ -149,6 +149,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#thinking"><i class="fa fa-check"></i>bookdown使用心得</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#author"><i class="fa fa-check"></i>作者简介</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#reference"><i class="fa fa-check"></i>参考文献</a></li>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#pandoc"><i class="fa fa-check"></i><b>0.1</b> pandoc</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="旋转大气运动的基本方程.html"><a href="旋转大气运动的基本方程.html"><i class="fa fa-check"></i><b>1</b> 1.2 旋转大气运动的基本方程</a><ul>
 <li class="chapter" data-level="1.1" data-path="旋转大气运动的基本方程.html"><a href="旋转大气运动的基本方程.html#专业名词"><i class="fa fa-check"></i><b>1.1</b> 专业名词</a></li>
@@ -216,17 +217,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><span class="math display">\[
 \left(\frac{\partial \rho}{\partial t}\right)_{a}+(\nabla \cdot \rho \vec{V}_a)_{a}=0
 \]</span></p>
-<p><code>拉格朗日观点</code>和<code>欧拉观点</code>是同一事物的两种不同描述。证明：</p>
-<p>$$
-<span class="math display">\[\begin{align}
-   \frac{\partial \rho}{\partial t}+\nabla \cdot (\rho \vec{V}) =0  \\ 
-   
-   (\frac{\partial \rho}{\partial t} + \vec{V} \nabla  \cdot \rho) + \rho \nabla\cdot\vec{V} =0 \notag \\
-
-   \frac{d \rho}{\partial t} +\rho \nabla \cdot  \vec{V}=0 \notag
-
-\end{align}\]</span>
-$$</p>
+<p><code>拉格朗日观点</code>和<code>欧拉观点</code>是同一事物的两种不同描述。证明：
+<span class="math display">\[
+   \begin{align}
+      \frac{\partial \rho}{\partial t}+\nabla \cdot (\rho \vec{V}) &amp;=0  \\\\
+      (\frac{\partial \rho}{\partial t} + \vec{V} \nabla  \cdot \rho) + \rho \nabla\cdot\vec{V} &amp;=0 \notag \\\\
+      \frac{d \rho}{\partial t} +\rho \nabla \cdot  \vec{V} &amp;=0 \notag
+   \end{align}
+\]</span></p>
 <p>其中，<span class="math inline">\(\nabla\cdot\)</span>：是求梯度的符号</p>
 <blockquote>
 <p>详细证明过程见 葛朝霞, 2013, 章节4.7, P103</p>
@@ -299,8 +297,8 @@ dQ = C_v dT + p d\alpha \\
 <p><span class="math display">\[
 \lambda =2499.5-2.39T, \;(J·g^{-1})
 \]</span></p>
-<p><span style="color:red">why</span></p>
-<p><span class="math display">\[
+<p><span style="color:red">why</span>
+<span class="math display">\[
 \begin{align}
    dQ + \lambda d{q_s} &amp;= C_p dT - \frac{RT}{p}dp \\
      &amp;= C_v dT + RdT - \alpha dp   \notag \\
@@ -350,7 +348,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rpkgs/JOPSbook/edit/master/1.2-旋转大气运动的基本方程.Rmd",
+"link": "https://github.com/CUG-hydro/CUG-HydroMeteorology/edit/master/1.2-旋转大气运动的基本方程.Rmd",
 "text": "Edit"
 },
 "history": {
