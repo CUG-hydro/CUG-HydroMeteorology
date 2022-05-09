@@ -1,5 +1,5 @@
 --- 
-title: "Practical Smoothing, The Joys of P-splines"
+title: "CUG水文气象学"
 author: "孔冬冬"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -34,49 +34,34 @@ knitr::opts_chunk$set(
 
 # 前言 {.unnumbered #Intro}
 
-## bookdown编译 {.unnumbered #render}
+## bookdown {.unnumbered #render}
 
-You can render the HTML version of this example book without changing anything:
+本书采用bookdown + GitHub action自动渲染成网页。其实也可以采用Typora本地查看，排版与网页版基本一致。
 
-1. Find the **Build** pane in the RStudio IDE, and
+### bookdown编译 {.unnumbered}
 
-1. Click on **Build Book**, then select your output format, or select "All formats" if you'd like to use multiple formats from the same book source files.
+> 编译为静态预览。编译之后Rmd做的修改，不会立即同步。
 
 ```{r, eval=FALSE}
 bookdown::render_book()
 ```
+
 如需编译pdf（`bookdown::pdf_book`），需要安装`XeLaTeX`。建议使用`TinyTeX`：<https://yihui.org/tinytex/>。
 
 
-## bookdown预览 {.unnumbered #view}
+### bookdown预览 {.unnumbered #view}
+
+> 预览为动览。编译之后Rmd做的修改，会立即同步更新。
 
 ```{r eval=FALSE}
 bookdown::serve_book()
+# servr::daemon_stop(1) # to stop render
 ```
 
-
-## bookdown使用心得 {.unnumbered #thinking}
+### bookdown使用心得 {.unnumbered #thinking}
 
 - `Rmd`文件名的排序决定了编译顺序。建议Rmd在命名时需要考虑文件排序。
 
 - `R`包加载一次即可。`index.Rmd`是最先被编译的`Rmd`文件，因此常用的R包可以在`index.Rmd`中加载。
 
 - `Rmd`在编译过程中无权限安装R包，因此require2无法实现其原本设计的功能。
-
-
-## 作者简介 {.unnumbered #author}
-
-孔冬冬，自然地理学博士，中国地质大学（武汉）任教。
-
-
-## 参考文献 {.unnumbered #reference}
-
-1. Xie Yihui (2022), Books and Technical Documents with R Markdown,
-   <https://bookdown.org/yihui/bookdown>
-
-2. 李东风 (2022), R语言教程, 北京大学《统计软件》,
-   <https://www.math.pku.edu.cn/teachers/lidf/docs/Rbook/html/_Rbook/bookdown.html>
-
-3. 王敏杰 (2022), 数据科学中的R语言, 四川师范大学研究生公选课,
-   <https://bookdown.org/wangminjie/R4DS/baseR-intro-ds.html>, 
-   <https://github.com/perlatex/R_for_Data_Science>

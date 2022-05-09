@@ -4,6 +4,10 @@
 [![bookdown](https://github.com/CUG-hydro/CUG-HydroMeteorology/actions/workflows/bookdown.yaml/badge.svg?branch=master)](https://github.com/CUG-hydro/CUG-HydroMeteorology/actions/workflows/bookdown.yaml)
 <!-- badges: end -->
 
+<https://github.com/CUG-hydro/CUG-HydroMeteorology>
+
+<https://CUG-hydro.github.io/CUG-HydroMeteorology>
+
 ## 实现的功能
 
 这是一个bookdown写作模板，已经实现了如下功能：

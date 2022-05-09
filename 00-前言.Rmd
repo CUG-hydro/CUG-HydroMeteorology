@@ -1,0 +1,90 @@
+
+## Typora {.unnumbered #typora}
+
+- 安装typora v0.11.18。
+
+> typora v1.0之前免费；之后转为收费。可以在网上搜到免费版的v0.11.18。
+
+- Rmd默认采用typora打开；
+
+Rmd打开之后看到的就是排版好的文档，与bookdown生成的网页基本一致。
+
+
+## pandoc：md转word或pdf {.unnumbered #pandoc}
+
+下载pandoc和pandoc-crossref，二者的版本要对应起来，否则编译会出错。
+
+- `pandoc`: <https://github.com/jgm/pandoc/releases>
+- `pandoc-crossref`: <https://github.com/lierdakil/pandoc-crossref/releases>
+
+在markdown文件中：
+
+```latex
+$$
+\begin{align}       
+\frac{\partial \rho}{\partial t}+\nabla \cdot (\rho \vec{V}) &= 0 \\
+(\frac{\partial \rho}{\partial t} + \vec{V} \nabla \cdot \rho) + \rho \nabla\cdot\vec{V} &=0
+\end{align}
+$$
+{#eq:description}
+```
+
+$$
+\begin{align}       
+\frac{\partial \rho}{\partial t}+\nabla \cdot (\rho \vec{V}) &= 0 \\
+(\frac{\partial \rho}{\partial t} + \vec{V} \nabla \cdot \rho) + \rho \nabla\cdot\vec{V} &=0
+\end{align}
+$$
+{#eq:description}
+
+注意：
+
+bookdown给公式编号的方式与latex不同。bookdown中，上述公式的代码应该改为：
+
+```latex
+$$
+\begin{align}       
+\frac{\partial \rho}{\partial t}+\nabla \cdot (\rho \vec{V}) &= 0 \\
+(\frac{\partial \rho}{\partial t} + \vec{V} \nabla \cdot \rho) + \rho \nabla\cdot\vec{V} &=0
+(\#eq:description)
+\end{align}
+$$
+```
+
+$$
+\begin{align}       
+\frac{\partial \rho}{\partial t}+\nabla \cdot (\rho \vec{V}) &= 0 \\
+(\frac{\partial \rho}{\partial t} + \vec{V} \nabla \cdot \rho) + \rho \nabla\cdot\vec{V} &=0
+\end{align}
+(\#eq:description)
+$$
+
+在命令行中：
+
+```powershell
+## powershell
+# word
+pandoc .\00-前言.Rmd --reference-doc=inst\numbered-sections.docx `
+  --filter pandoc-crossref --css .\inst\base.user.css -o hello.docx; .\hello.docx
+
+# pdf
+pandoc .\00-前言.Rmd -f markdown --reference-doc=inst\numbered-sections.docx `
+  --filter pandoc-crossref --css .\inst\base.user.css -o hello.pdf; .\hello.pdf
+```
+
+## 作者简介 {.unnumbered #author}
+
+孔冬冬，自然地理学博士，中国地质大学（武汉）副教授。
+
+
+## 参考文献 {.unnumbered #reference}
+
+1. Xie Yihui (2022), Books and Technical Documents with R Markdown,
+   <https://bookdown.org/yihui/bookdown>
+
+2. 李东风 (2022), R语言教程, 北京大学《统计软件》,
+   <https://www.math.pku.edu.cn/teachers/lidf/docs/Rbook/html/_Rbook/bookdown.html>
+
+3. 王敏杰 (2022), 数据科学中的R语言, 四川师范大学研究生公选课,
+   <https://bookdown.org/wangminjie/R4DS/baseR-intro-ds.html>, 
+   <https://github.com/perlatex/R_for_Data_Science>
