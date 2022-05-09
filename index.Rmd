@@ -1,0 +1,82 @@
+--- 
+title: "Practical Smoothing, The Joys of P-splines"
+author: "孔冬冬"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  This is a minimal example of using the bookdown package to write a book.
+  The HTML output format for this example is bookdown::gitbook,
+  set in the _output.yml file.
+link-citations: yes
+github-repo: rpkgs/JOPSbook
+---
+
+```{r include=FALSE}
+library(JOPS)
+library(JOPSbook)
+library(ggplot2)
+
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+
+knitr::opts_chunk$set(
+  # collapse = TRUE,
+  comment = "#>"
+  # fig.width = 7, fig.height = 5
+)
+```
+
+# 前言 {.unnumbered #Intro}
+
+## bookdown编译 {.unnumbered #render}
+
+You can render the HTML version of this example book without changing anything:
+
+1. Find the **Build** pane in the RStudio IDE, and
+
+1. Click on **Build Book**, then select your output format, or select "All formats" if you'd like to use multiple formats from the same book source files.
+
+```{r, eval=FALSE}
+bookdown::render_book()
+```
+如需编译pdf（`bookdown::pdf_book`），需要安装`XeLaTeX`。建议使用`TinyTeX`：<https://yihui.org/tinytex/>。
+
+
+## bookdown预览 {.unnumbered #view}
+
+```{r eval=FALSE}
+bookdown::serve_book()
+```
+
+
+## bookdown使用心得 {.unnumbered #thinking}
+
+- `Rmd`文件名的排序决定了编译顺序。建议Rmd在命名时需要考虑文件排序。
+
+- `R`包加载一次即可。`index.Rmd`是最先被编译的`Rmd`文件，因此常用的R包可以在`index.Rmd`中加载。
+
+- `Rmd`在编译过程中无权限安装R包，因此require2无法实现其原本设计的功能。
+
+
+## 作者简介 {.unnumbered #author}
+
+孔冬冬，自然地理学博士，中国地质大学（武汉）任教。
+
+
+## 参考文献 {.unnumbered #reference}
+
+1. Xie Yihui (2022), Books and Technical Documents with R Markdown,
+   <https://bookdown.org/yihui/bookdown>
+
+2. 李东风 (2022), R语言教程, 北京大学《统计软件》,
+   <https://www.math.pku.edu.cn/teachers/lidf/docs/Rbook/html/_Rbook/bookdown.html>
+
+3. 王敏杰 (2022), 数据科学中的R语言, 四川师范大学研究生公选课,
+   <https://bookdown.org/wangminjie/R4DS/baseR-intro-ds.html>, 
+   <https://github.com/perlatex/R_for_Data_Science>
