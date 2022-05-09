@@ -145,12 +145,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>前言</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#render"><i class="fa fa-check"></i>bookdown</a><ul>
-<li class="chapter" data-level="0.0.1" data-path="index.html"><a href="index.html#bookdown编译"><i class="fa fa-check"></i><b>0.0.1</b> bookdown编译</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#bookdown编译"><i class="fa fa-check"></i>bookdown编译</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#view"><i class="fa fa-check"></i>bookdown预览</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#thinking"><i class="fa fa-check"></i>bookdown使用心得</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#typora"><i class="fa fa-check"></i>Typora</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#pandocmd转word或pdf"><i class="fa fa-check"></i>pandoc：md转word或pdf</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#pandoc"><i class="fa fa-check"></i>pandoc：md转word或pdf</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#author"><i class="fa fa-check"></i>作者简介</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#reference"><i class="fa fa-check"></i>参考文献</a></li>
 </ul></li>
@@ -193,8 +193,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="render" class="section level2 unnumbered hasAnchor">
 <h2>bookdown<a href="index.html#render" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>本书采用bookdown + GitHub action自动渲染成网页。其实也可以采用Typora本地查看，排版与网页版基本一致。</p>
-<div id="bookdown编译" class="section level3 hasAnchor">
-<h3><span class="header-section-number">0.0.1</span> bookdown编译<a href="index.html#bookdown编译" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="bookdown编译" class="section level3 unnumbered hasAnchor">
+<h3>bookdown编译<a href="index.html#bookdown编译" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <blockquote>
 <p>编译为静态预览。编译之后Rmd做的修改，不会立即同步。</p>
 </blockquote>
@@ -206,7 +206,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p>预览为动览。编译之后Rmd做的修改，会立即同步更新。</p>
 </blockquote>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1"></a>bookdown<span class="op">::</span><span class="kw">serve_book</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1"></a>bookdown<span class="op">::</span><span class="kw">serve_book</span>()</span>
+<span id="cb2-2"><a href="index.html#cb2-2"></a><span class="co"># servr::daemon_stop(1) # to stop render</span></span></code></pre></div>
 </div>
 <div id="thinking" class="section level3 unnumbered hasAnchor">
 <h3>bookdown使用心得<a href="index.html#thinking" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -221,14 +222,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="typora" class="section level2 unnumbered hasAnchor">
 <h2>Typora<a href="index.html#typora" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li><p>安装typora v0.11.18。
-&gt; typora v1.0之前免费；之后转为收费。网上可以搜到v0.11.18。</p></li>
-<li><p>Rmd默认采用typora打开；</p></li>
+<li>安装typora v0.11.18。</li>
+</ul>
+<blockquote>
+<p>typora v1.0之前免费；之后转为收费。可以在网上搜到免费版的v0.11.18。</p>
+</blockquote>
+<ul>
+<li>Rmd默认采用typora打开；</li>
 </ul>
 <p>Rmd打开之后看到的就是排版好的文档，与bookdown生成的网页基本一致。</p>
 </div>
-<div id="pandocmd转word或pdf" class="section level2 unnumbered hasAnchor">
-<h2>pandoc：md转word或pdf<a href="index.html#pandocmd转word或pdf" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="pandoc" class="section level2 unnumbered hasAnchor">
+<h2>pandoc：md转word或pdf<a href="index.html#pandoc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>下载pandoc和pandoc-crossref，二者的版本要对应起来，否则编译会出错。</p>
 <ul>
 <li><code>pandoc</code>: <a href="https://github.com/jgm/pandoc/releases" class="uri">https://github.com/jgm/pandoc/releases</a></li>
@@ -249,15 +254,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \end{align}
 \]</span>
 {#eq:description}</p>
+<p>注意：</p>
+<p>bookdown给公式编号的方式与latex不同。bookdown中，上述公式的代码应该改为：</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb4-1"><a href="index.html#cb4-1"></a><span class="ss">$$</span></span>
+<span id="cb4-2"><a href="index.html#cb4-2"></a><span class="er">\begin{align}</span><span class="ss">       </span></span>
+<span id="cb4-3"><a href="index.html#cb4-3"></a><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> </span><span class="sc">\rho</span><span class="ss">}{</span><span class="sc">\partial</span><span class="ss"> t}+</span><span class="sc">\nabla</span><span class="ss"> </span><span class="sc">\cdot</span><span class="ss"> (</span><span class="sc">\rho</span><span class="ss"> </span><span class="sc">\vec</span><span class="ss">{V}) &amp;= 0 </span><span class="sc">\\</span></span>
+<span id="cb4-4"><a href="index.html#cb4-4"></a><span class="ss">(</span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> </span><span class="sc">\rho</span><span class="ss">}{</span><span class="sc">\partial</span><span class="ss"> t} + </span><span class="sc">\vec</span><span class="ss">{V} </span><span class="sc">\nabla</span><span class="ss"> </span><span class="sc">\cdot</span><span class="ss"> </span><span class="sc">\rho</span><span class="ss">) + </span><span class="sc">\rho</span><span class="ss"> </span><span class="sc">\nabla\cdot\vec</span><span class="ss">{V} &amp;=0</span></span>
+<span id="cb4-5"><a href="index.html#cb4-5"></a><span class="ss">(</span><span class="sc">\#</span><span class="ss">eq:description)</span></span>
+<span id="cb4-6"><a href="index.html#cb4-6"></a><span class="er">\end{align}</span></span>
+<span id="cb4-7"><a href="index.html#cb4-7"></a><span class="ss">$$</span></span></code></pre></div>
+<p><span class="math display" id="eq:description">\[
+\begin{align}       
+\frac{\partial \rho}{\partial t}+\nabla \cdot (\rho \vec{V}) &amp;= 0 \\
+(\frac{\partial \rho}{\partial t} + \vec{V} \nabla \cdot \rho) + \rho \nabla\cdot\vec{V} &amp;=0
+\end{align}
+\tag{0.1}
+\]</span></p>
 <p>在命令行中：</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb4-1"><a href="index.html#cb4-1"></a><span class="co">## powershell</span></span>
-<span id="cb4-2"><a href="index.html#cb4-2"></a><span class="co"># word</span></span>
-<span id="cb4-3"><a href="index.html#cb4-3"></a>pandoc .\00-typora配置说明.<span class="fu">Rmd</span> --reference-doc=inst\numbered-sections.<span class="fu">docx</span> `</span>
-<span id="cb4-4"><a href="index.html#cb4-4"></a>  --filter pandoc-crossref --css .\inst\base.<span class="fu">user</span>.<span class="fu">css</span> -o hello.<span class="fu">docx</span>; .\hello.<span class="fu">docx</span></span>
-<span id="cb4-5"><a href="index.html#cb4-5"></a></span>
-<span id="cb4-6"><a href="index.html#cb4-6"></a><span class="co"># pdf</span></span>
-<span id="cb4-7"><a href="index.html#cb4-7"></a>pandoc .\00-typora配置说明.<span class="fu">Rmd</span> -f markdown --reference-doc=inst\numbered-sections.<span class="fu">docx</span> `</span>
-<span id="cb4-8"><a href="index.html#cb4-8"></a>  --filter pandoc-crossref --css .\inst\base.<span class="fu">user</span>.<span class="fu">css</span> -o hello.<span class="fu">pdf</span>; .\hello.<span class="fu">pdf</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb5-1"><a href="index.html#cb5-1"></a><span class="co">## powershell</span></span>
+<span id="cb5-2"><a href="index.html#cb5-2"></a><span class="co"># word</span></span>
+<span id="cb5-3"><a href="index.html#cb5-3"></a>pandoc .\00-Intro.<span class="fu">Rmd</span> --reference-doc=inst\numbered-sections.<span class="fu">docx</span> `</span>
+<span id="cb5-4"><a href="index.html#cb5-4"></a>  --filter pandoc-crossref --css .\inst\base.<span class="fu">user</span>.<span class="fu">css</span> -o hello.<span class="fu">docx</span>; .\hello.<span class="fu">docx</span></span>
+<span id="cb5-5"><a href="index.html#cb5-5"></a></span>
+<span id="cb5-6"><a href="index.html#cb5-6"></a><span class="co"># pdf</span></span>
+<span id="cb5-7"><a href="index.html#cb5-7"></a>pandoc .\00-Intro.<span class="fu">Rmd</span> -f markdown --reference-doc=inst\numbered-sections.<span class="fu">docx</span> `</span>
+<span id="cb5-8"><a href="index.html#cb5-8"></a>  --filter pandoc-crossref --css .\inst\base.<span class="fu">user</span>.<span class="fu">css</span> -o hello.<span class="fu">pdf</span>; .\hello.<span class="fu">pdf</span></span></code></pre></div>
 </div>
 <div id="author" class="section level2 unnumbered hasAnchor">
 <h2>作者简介<a href="index.html#author" class="anchor-section" aria-label="Anchor link to header"></a></h2>

@@ -1,4 +1,4 @@
-bookdown编译
+eq:description
 旋转大气运动的基本方程
 专业名词
 四大定律
