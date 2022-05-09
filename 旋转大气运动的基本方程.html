@@ -37,7 +37,7 @@ set in the _output.yml file.</p>" />
   
   
 <link rel="prev" href="index.html"/>
-
+<link rel="next" href="大气热力学.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -160,7 +160,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2.1" data-path="旋转大气运动的基本方程.html"><a href="旋转大气运动的基本方程.html#牛顿第二定律"><i class="fa fa-check"></i><b>1.2.1</b> 牛顿第二定律</a></li>
 <li class="chapter" data-level="1.2.2" data-path="旋转大气运动的基本方程.html"><a href="旋转大气运动的基本方程.html#质量守恒定律"><i class="fa fa-check"></i><b>1.2.2</b> 质量守恒定律</a></li>
 <li class="chapter" data-level="1.2.3" data-path="旋转大气运动的基本方程.html"><a href="旋转大气运动的基本方程.html#理想气体定律"><i class="fa fa-check"></i><b>1.2.3</b> 理想气体定律</a></li>
-<li class="chapter" data-level="1.2.4" data-path="旋转大气运动的基本方程.html"><a href="旋转大气运动的基本方程.html#热力学第一定律"><i class="fa fa-check"></i><b>1.2.4</b> 热力学第一定律</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="大气热力学.html"><a href="大气热力学.html"><i class="fa fa-check"></i><b>2</b> 大气热力学</a><ul>
+<li class="chapter" data-level="2.1" data-path="大气热力学.html"><a href="大气热力学.html#热力学第一定律"><i class="fa fa-check"></i><b>2.1</b> 热力学第一定律</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="大气热力学.html"><a href="大气热力学.html#定容与定压比热容"><i class="fa fa-check"></i><b>2.1.1</b> 定容与定压比热容</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="大气热力学.html"><a href="大气热力学.html#绝热过程"><i class="fa fa-check"></i><b>2.2</b> 绝热过程</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="大气热力学.html"><a href="大气热力学.html#干空气"><i class="fa fa-check"></i><b>2.2.1</b> 干空气</a></li>
+<li class="chapter" data-level="2.2.2" data-path="大气热力学.html"><a href="大气热力学.html#湿空气"><i class="fa fa-check"></i><b>2.2.2</b> 湿空气</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -243,74 +251,7 @@ p \alpha =R T
 <span class="math display">\[
 \alpha dp+pd\alpha=RdT
 \]</span></p>
-</div>
-<div id="热力学第一定律" class="section level3 hasAnchor">
-<h3><span class="header-section-number">1.2.4</span> 热力学第一定律<a href="旋转大气运动的基本方程.html#热力学第一定律" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<blockquote>
-<p>热力学第一定律：对系统施加的热量等于系统的内能变化和对系统对外做功之和。</p>
-</blockquote>
-<p>对式6，两边同时求微分，可得：
-<span class="math display">\[
-dQ = C_v dT + p d\alpha \\
-\dot{Q} = C_{v} \frac{d T}{d t} + p \frac{d \alpha}{d t}
-\]</span></p>
-<blockquote>
-<p>距离或者体积<span class="math inline">\(\alpha\)</span>不变，则不存在做功，因此上式不包含 <span class="math inline">\(\alpha dp\)</span>。</p>
-</blockquote>
-<div id="定容与定压比热容" class="section level4 hasAnchor">
-<h4><span class="header-section-number">1.2.4.1</span> 定容与定压比热容<a href="旋转大气运动的基本方程.html#定容与定压比热容" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<ol style="list-style-type: decimal">
-<li><p>定容(<span class="math inline">\(d \alpha = 0\)</span>)，热量全部转化为内能，<span class="math inline">\(dQ = C_v dT\)</span>；</p></li>
-<li><p>定压(<span class="math inline">\(d p = 0\)</span>)，一部分能量对外做功。此时：
-<span class="math display">\[
-\begin{align}
-   dQ &amp;= C_v dT + p d\alpha \\
-      &amp;= C_v dT + RdT - \alpha dp \notag, (dp=0) \\
-      &amp;= C_v dT + RdT             \notag \\
-      &amp;= C_p dT             \notag
-\end{align}
-\]</span></p></li>
-</ol>
-<p>因此<span class="math inline">\(C_p = C_v + R\)</span>。</p>
-<p>其中，<span class="math inline">\(C_{v}\)</span>、<span class="math inline">\(C_p\)</span>分为定容、定压比热容，对于干空气，<span class="math inline">\(C_{v}=0.716 J ·g^{-1} K^{-1}\)</span>、<span class="math inline">\(C_p=1.005 J ·g^{-1} K^{-1}\)</span>。</p>
-</div>
-<div id="干空气" class="section level4 hasAnchor">
-<h4><span class="header-section-number">1.2.4.2</span> 干空气<a href="旋转大气运动的基本方程.html#干空气" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p><strong>在dp不为0情况下</strong>，将<span class="math inline">\(\alpha=\frac{RT}{p}\)</span>带入：
-<span class="math display">\[
-\begin{align}
-   dQ &amp;= C_v dT + p d\alpha \\
-      &amp;= C_v dT + RdT - \alpha dp   \notag \\
-      &amp;= C_p dT - \alpha dp         \notag \\
-      &amp;= C_p dT - \frac{RT}{p}dp    \notag
-\end{align}
-\]</span></p>
-</div>
-<div id="湿空气" class="section level4 hasAnchor">
-<h4><span class="header-section-number">1.2.4.3</span> 湿空气<a href="旋转大气运动的基本方程.html#湿空气" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>与干空气相比，湿空气多了凝结潜热。</p>
-<blockquote>
-<ol style="list-style-type: decimal">
-<li>气化潜热：单位质量的液体，气化所需要的热浪；</li>
-<li>凝结潜热: 单位质量的气体，凝结所释放的热量。</li>
-</ol>
-<p>气化与凝结互为反过程。</p>
-</blockquote>
-<!-- 湿空气达到饱和后，有部分水汽会发生凝结。 -->
-<p><span class="math display">\[
-\lambda =2499.5-2.39T, \;(J·g^{-1})
-\]</span></p>
-<p><span style="color:red">why</span>
-<span class="math display">\[
-\begin{align}
-   dQ + \lambda d{q_s} &amp;= C_p dT - \frac{RT}{p}dp \\
-     &amp;= C_v dT + RdT - \alpha dp   \notag \\
-     &amp;= C_p dT - \alpha dp         \notag \\
-     &amp;= C_p dT - \frac{RT}{p}dp    \notag
-\end{align}
-\]</span></p>
 
-</div>
 </div>
 </div>
 </div>
@@ -319,8 +260,8 @@ dQ = C_v dT + p d\alpha \\
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="大气热力学.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -351,7 +292,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/CUG-hydro/CUG-HydroMeteorology/edit/master/1.2-旋转大气运动的基本方程.Rmd",
+"link": "https://github.com/CUG-hydro/CUG-HydroMeteorology/edit/master/02-大气运动的基本方程.Rmd",
 "text": "Edit"
 },
 "history": {

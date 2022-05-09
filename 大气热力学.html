@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>CUG水文气象学</title>
+  <title>Chapter 2 大气热力学 | CUG水文气象学</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="CUG水文气象学" />
+  <meta property="og:title" content="Chapter 2 大气热力学 | CUG水文气象学" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rpkgs/JOPSbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="CUG水文气象学" />
+  <meta name="twitter:title" content="Chapter 2 大气热力学 | CUG水文气象学" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -36,8 +36,8 @@ set in the _output.yml file.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="旋转大气运动的基本方程.html"/>
 
-<link rel="next" href="旋转大气运动的基本方程.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -191,119 +191,124 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">CUG水文气象学</h1>
-<p class="author"><em>孔冬冬</em></p>
-<p class="date"><em>2022-05-09</em></p>
-</div>
-<div id="Intro" class="section level1 unnumbered hasAnchor">
-<h1>前言<a href="index.html#Intro" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="render" class="section level2 unnumbered hasAnchor">
-<h2>bookdown<a href="index.html#render" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>本书采用bookdown + GitHub action自动渲染成网页。其实也可以采用Typora本地查看，排版与网页版基本一致。</p>
-<div id="bookdown编译" class="section level3 unnumbered hasAnchor">
-<h3>bookdown编译<a href="index.html#bookdown编译" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="大气热力学" class="section level1 hasAnchor">
+<h1><span class="header-section-number">Chapter 2</span> 大气热力学<a href="大气热力学.html#大气热力学" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="热力学第一定律" class="section level2 hasAnchor">
+<h2><span class="header-section-number">2.1</span> 热力学第一定律<a href="大气热力学.html#热力学第一定律" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <blockquote>
-<p>编译为静态预览。编译之后Rmd做的修改，不会立即同步。</p>
+<p>热力学第一定律：对系统施加的热量等于系统的内能变化和对系统对外做功之和。</p>
 </blockquote>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1"></a>bookdown<span class="op">::</span><span class="kw">render_book</span>()</span></code></pre></div>
-<p>如需编译pdf（<code>bookdown::pdf_book</code>），需要安装<code>XeLaTeX</code>。建议使用<code>TinyTeX</code>：<a href="https://yihui.org/tinytex/" class="uri">https://yihui.org/tinytex/</a>。</p>
-</div>
-<div id="view" class="section level3 unnumbered hasAnchor">
-<h3>bookdown预览<a href="index.html#view" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<blockquote>
-<p>预览为动览。编译之后Rmd做的修改，会立即同步更新。</p>
-</blockquote>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1"></a>bookdown<span class="op">::</span><span class="kw">serve_book</span>()</span>
-<span id="cb2-2"><a href="index.html#cb2-2"></a><span class="co"># servr::daemon_stop(1) # to stop render</span></span></code></pre></div>
-</div>
-<div id="thinking" class="section level3 unnumbered hasAnchor">
-<h3>bookdown使用心得<a href="index.html#thinking" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><p><code>Rmd</code>文件名的排序决定了编译顺序。建议Rmd在命名时需要考虑文件排序。</p></li>
-<li><p><code>R</code>包加载一次即可。<code>index.Rmd</code>是最先被编译的<code>Rmd</code>文件，因此常用的R包可以在<code>index.Rmd</code>中加载。</p></li>
-<li><p><code>Rmd</code>在编译过程中无权限安装R包，因此require2无法实现其原本设计的功能。</p></li>
-</ul>
-
-</div>
-</div>
-<div id="typora" class="section level2 unnumbered hasAnchor">
-<h2>Typora<a href="index.html#typora" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li>安装typora v0.11.18。</li>
-</ul>
-<blockquote>
-<p>typora v1.0之前免费；之后转为收费。可以在网上搜到免费版的v0.11.18。</p>
-</blockquote>
-<ul>
-<li>Rmd默认采用typora打开；</li>
-</ul>
-<p>Rmd打开之后看到的就是排版好的文档，与bookdown生成的网页基本一致。</p>
-</div>
-<div id="pandoc" class="section level2 unnumbered hasAnchor">
-<h2>pandoc：md转word或pdf<a href="index.html#pandoc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>下载pandoc和pandoc-crossref，二者的版本要对应起来，否则编译会出错。</p>
-<ul>
-<li><code>pandoc</code>: <a href="https://github.com/jgm/pandoc/releases" class="uri">https://github.com/jgm/pandoc/releases</a></li>
-<li><code>pandoc-crossref</code>: <a href="https://github.com/lierdakil/pandoc-crossref/releases" class="uri">https://github.com/lierdakil/pandoc-crossref/releases</a></li>
-</ul>
-<p>在markdown文件中：</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb3-1"><a href="index.html#cb3-1"></a><span class="ss">$$</span></span>
-<span id="cb3-2"><a href="index.html#cb3-2"></a><span class="er">\begin{align}</span><span class="ss">       </span></span>
-<span id="cb3-3"><a href="index.html#cb3-3"></a><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> </span><span class="sc">\rho</span><span class="ss">}{</span><span class="sc">\partial</span><span class="ss"> t}+</span><span class="sc">\nabla</span><span class="ss"> </span><span class="sc">\cdot</span><span class="ss"> (</span><span class="sc">\rho</span><span class="ss"> </span><span class="sc">\vec</span><span class="ss">{V}) &amp;= 0 </span><span class="sc">\\</span></span>
-<span id="cb3-4"><a href="index.html#cb3-4"></a><span class="ss">(</span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> </span><span class="sc">\rho</span><span class="ss">}{</span><span class="sc">\partial</span><span class="ss"> t} + </span><span class="sc">\vec</span><span class="ss">{V} </span><span class="sc">\nabla</span><span class="ss"> </span><span class="sc">\cdot</span><span class="ss"> </span><span class="sc">\rho</span><span class="ss">) + </span><span class="sc">\rho</span><span class="ss"> </span><span class="sc">\nabla\cdot\vec</span><span class="ss">{V} &amp;=0</span></span>
-<span id="cb3-5"><a href="index.html#cb3-5"></a><span class="er">\end{align}</span></span>
-<span id="cb3-6"><a href="index.html#cb3-6"></a><span class="ss">$$</span></span>
-<span id="cb3-7"><a href="index.html#cb3-7"></a>{#eq:description}</span></code></pre></div>
-<p><span class="math display">\[
-\begin{align}       
-\frac{\partial \rho}{\partial t}+\nabla \cdot (\rho \vec{V}) &amp;= 0 \\
-(\frac{\partial \rho}{\partial t} + \vec{V} \nabla \cdot \rho) + \rho \nabla\cdot\vec{V} &amp;=0
-\end{align}
-\]</span>
-{#eq:description}</p>
-<p>注意：</p>
-<p>bookdown给公式编号的方式与latex不同。bookdown中，上述公式的代码应该改为：</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb4-1"><a href="index.html#cb4-1"></a><span class="ss">$$</span></span>
-<span id="cb4-2"><a href="index.html#cb4-2"></a><span class="er">\begin{align}</span><span class="ss">       </span></span>
-<span id="cb4-3"><a href="index.html#cb4-3"></a><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> </span><span class="sc">\rho</span><span class="ss">}{</span><span class="sc">\partial</span><span class="ss"> t}+</span><span class="sc">\nabla</span><span class="ss"> </span><span class="sc">\cdot</span><span class="ss"> (</span><span class="sc">\rho</span><span class="ss"> </span><span class="sc">\vec</span><span class="ss">{V}) &amp;= 0 </span><span class="sc">\\</span></span>
-<span id="cb4-4"><a href="index.html#cb4-4"></a><span class="ss">(</span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> </span><span class="sc">\rho</span><span class="ss">}{</span><span class="sc">\partial</span><span class="ss"> t} + </span><span class="sc">\vec</span><span class="ss">{V} </span><span class="sc">\nabla</span><span class="ss"> </span><span class="sc">\cdot</span><span class="ss"> </span><span class="sc">\rho</span><span class="ss">) + </span><span class="sc">\rho</span><span class="ss"> </span><span class="sc">\nabla\cdot\vec</span><span class="ss">{V} &amp;=0</span></span>
-<span id="cb4-5"><a href="index.html#cb4-5"></a><span class="ss">(</span><span class="sc">\#</span><span class="ss">eq:description)</span></span>
-<span id="cb4-6"><a href="index.html#cb4-6"></a><span class="er">\end{align}</span></span>
-<span id="cb4-7"><a href="index.html#cb4-7"></a><span class="ss">$$</span></span></code></pre></div>
-<p><span class="math display" id="eq:description">\[
-\begin{align}       
-\frac{\partial \rho}{\partial t}+\nabla \cdot (\rho \vec{V}) &amp;= 0 \\
-(\frac{\partial \rho}{\partial t} + \vec{V} \nabla \cdot \rho) + \rho \nabla\cdot\vec{V} &amp;=0
-\end{align}
-\tag{0.1}
+<p>对式6，两边同时求微分，可得：
+<span class="math display">\[
+dQ = C_v dT + p d\alpha \\
+\dot{Q} = C_{v} \frac{d T}{d t} + p \frac{d \alpha}{d t}
 \]</span></p>
-<p>在命令行中：</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb5-1"><a href="index.html#cb5-1"></a><span class="co">## powershell</span></span>
-<span id="cb5-2"><a href="index.html#cb5-2"></a><span class="co"># word</span></span>
-<span id="cb5-3"><a href="index.html#cb5-3"></a>pandoc .\00-前言.<span class="fu">Rmd</span> --reference-doc=inst\numbered-sections.<span class="fu">docx</span> `</span>
-<span id="cb5-4"><a href="index.html#cb5-4"></a>  --filter pandoc-crossref --css .\inst\base.<span class="fu">user</span>.<span class="fu">css</span> -o hello.<span class="fu">docx</span>; .\hello.<span class="fu">docx</span></span>
-<span id="cb5-5"><a href="index.html#cb5-5"></a></span>
-<span id="cb5-6"><a href="index.html#cb5-6"></a><span class="co"># pdf</span></span>
-<span id="cb5-7"><a href="index.html#cb5-7"></a>pandoc .\00-前言.<span class="fu">Rmd</span> -f markdown --reference-doc=inst\numbered-sections.<span class="fu">docx</span> `</span>
-<span id="cb5-8"><a href="index.html#cb5-8"></a>  --filter pandoc-crossref --css .\inst\base.<span class="fu">user</span>.<span class="fu">css</span> -o hello.<span class="fu">pdf</span>; .\hello.<span class="fu">pdf</span></span></code></pre></div>
-</div>
-<div id="author" class="section level2 unnumbered hasAnchor">
-<h2>作者简介<a href="index.html#author" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>孔冬冬，自然地理学博士，中国地质大学（武汉）副教授。</p>
-</div>
-<div id="reference" class="section level2 unnumbered hasAnchor">
-<h2>参考文献<a href="index.html#reference" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<blockquote>
+<p>距离或者体积<span class="math inline">\(\alpha\)</span>不变，则不存在做功，因此上式不包含 <span class="math inline">\(\alpha dp\)</span>。</p>
+</blockquote>
+<div id="定容与定压比热容" class="section level3 hasAnchor">
+<h3><span class="header-section-number">2.1.1</span> 定容与定压比热容<a href="大气热力学.html#定容与定压比热容" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
-<li><p>Xie Yihui (2022), Books and Technical Documents with R Markdown,
-<a href="https://bookdown.org/yihui/bookdown" class="uri">https://bookdown.org/yihui/bookdown</a></p></li>
-<li><p>李东风 (2022), R语言教程, 北京大学《统计软件》,
-<a href="https://www.math.pku.edu.cn/teachers/lidf/docs/Rbook/html/_Rbook/bookdown.html" class="uri">https://www.math.pku.edu.cn/teachers/lidf/docs/Rbook/html/_Rbook/bookdown.html</a></p></li>
-<li><p>王敏杰 (2022), 数据科学中的R语言, 四川师范大学研究生公选课,
-<a href="https://bookdown.org/wangminjie/R4DS/baseR-intro-ds.html" class="uri">https://bookdown.org/wangminjie/R4DS/baseR-intro-ds.html</a>,
-<a href="https://github.com/perlatex/R_for_Data_Science" class="uri">https://github.com/perlatex/R_for_Data_Science</a></p></li>
+<li><p>定容(<span class="math inline">\(d \alpha = 0\)</span>)，热量全部转化为内能，<span class="math inline">\(dQ = C_v dT\)</span>；</p></li>
+<li><p>定压(<span class="math inline">\(d p = 0\)</span>)，一部分能量对外做功。此时：
+<span class="math display">\[
+\begin{align}
+   dQ &amp;= C_v dT + p d\alpha \\
+      &amp;= C_v dT + RdT - \alpha dp \notag, (dp=0) \\
+      &amp;= C_v dT + RdT             \notag \\
+      &amp;= C_p dT             \notag
+\end{align}
+\]</span></p></li>
 </ol>
+<p>因此<span class="math inline">\(C_p = C_v + R\)</span>。</p>
+<p>其中，<span class="math inline">\(C_{v}\)</span>、<span class="math inline">\(C_p\)</span>分为定容、定压比热容，对于干空气，<span class="math inline">\(C_{v}=0.716 J ·g^{-1} K^{-1}\)</span>、<span class="math inline">\(C_p=1.005 J ·g^{-1} K^{-1}\)</span>。</p>
+</div>
+</div>
+<div id="绝热过程" class="section level2 hasAnchor">
+<h2><span class="header-section-number">2.2</span> 绝热过程<a href="大气热力学.html#绝热过程" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="干空气" class="section level3 hasAnchor">
+<h3><span class="header-section-number">2.2.1</span> 干空气<a href="大气热力学.html#干空气" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>在dp不为0情况下</strong>，将<span class="math inline">\(\alpha=\frac{RT}{p}\)</span>带入：
+<span class="math display">\[
+\begin{align}
+   dQ &amp;= C_v dT + p d\alpha \\
+      &amp;= C_v dT + RdT - \alpha dp   \notag \\
+      &amp;= C_p dT - \alpha dp         \notag \\
+      &amp;= C_p dT - \frac{RT}{p}dp    \notag
+\end{align}
+\]</span></p>
+<p>即：
+<span class="math display">\[
+dQ= C_p dT - \frac{RT}{p}dp
+\]</span></p>
+<div id="绝热情况下" class="section level4 hasAnchor">
+<h4><span class="header-section-number">2.2.1.1</span> 绝热情况下：<a href="大气热力学.html#绝热情况下" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>$$
+C_p dT = dp \
+C_p  {T} = R  {p} \</p>
+<p>C_p <em>{T</em>{0}}^{T} =<em>{p</em>{0}}^{p} R  \
+ln  = ln ( [] ^{R/C_p})
+$$</p>
+<p>因此可得：
+<span class="math display">\[
+T = T_0 * (\frac{p}{p_0}) ^{R/C_p}
+\]</span>
+上式等价于：
+<span class="math display">\[
+T_0 = T * (\frac{p_0}{p}) ^{R/C_p}
+\]</span>
+定义1000hpa处的温度为位温<span class="math inline">\(\theta\)</span>，则
+<span class="math display">\[
+\theta = T * (\frac{p_0}{p}) ^{R/C_p} \\
+= T * (\frac{1000}{p}) ^ {0.288}
+\]</span></p>
+<p><span class="math display">\[
+\begin{align}
+ln \theta &amp;= ln T + \frac{R}{C_p} ln(\frac{p_0}{p})  \\
+          &amp;= ln T - \frac{R}{C_p} ln p + \frac{R}{C_p} ln(p_0) \\
+          &amp;= ln T - \frac{R}{C_p} ln p + const
+\end{align}
+\]</span></p>
+<p>根据上式可以得到：
+<span class="math display">\[
+d {ln(\theta)} = \frac{d\theta}\theta = C_p \frac{dT}{T}  - \frac{R}{C_p} \frac{dp}{p}
+\]</span></p>
+</div>
+</div>
+<div id="湿空气" class="section level3 hasAnchor">
+<h3><span class="header-section-number">2.2.2</span> 湿空气<a href="大气热力学.html#湿空气" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>与干空气相比，湿空气多了凝结释放的潜热。</p>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li><strong>气化潜热：单位质量的液体，气化所需要的热量</strong>；用符号<span class="math inline">\(\lambda\)</span>表示。<span style="color:red"><strong>随温度变化而变化，但变化幅度不大，因此有时认为<span class="math inline">\(\lambda\)</span>为常数。</strong></span></li>
+<li>凝结潜热: 单位质量的气体，凝结所释放的热量。</li>
+</ol>
+<p>气化与凝结互为反过程。</p>
+</blockquote>
+<p>气化潜热的公式如下：
+<span class="math display">\[
+\lambda =2499.5-2.39T, \;(J·g^{-1})
+\]</span></p>
+<p>湿空气达到饱和后，有部分水汽会发生凝结。凝结过程中，<span style="color:red"><strong>水汽含量下降，<span class="math inline">\(d{q_s}&lt;0\)</span></strong></span>，因此乘以<span class="math inline">\(-\lambda\)</span>表示释放的能量。</p>
+<p><span class="math display">\[
+\begin{align}
+   dQ - \lambda d{q_s} &amp;= C_p dT - \frac{RT}{p}dp
+\end{align}
+\]</span></p>
+<div id="绝热过程中" class="section level4 hasAnchor">
+<h4><span class="header-section-number">2.2.2.1</span> 绝热过程中<a href="大气热力学.html#绝热过程中" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><span class="math inline">\(dQ = 0\)</span>
+<span class="math display">\[
+- \lambda d{q_s} = C_p dT - \frac{RT}{p}dp \\
+  - \frac{\lambda d{q_s}}{T} = C_p \frac{dT}{T} - R\frac{dp}{p} \\
+  - \frac{\lambda d{q_s}}{C_p T} = \frac{d\theta}\theta
+\]</span></p>
+<p><span class="math display">\[
+\theta=T\left(\frac{p_{0}}{1000}\right)^{\frac{R}{c_{p}}} e^{\frac{\lambda\left(q-q_{0}\right)}{c_{p}}}
+\]</span></p>
 
+</div>
+</div>
 </div>
 </div>
             </section>
@@ -311,8 +316,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
+<a href="旋转大气运动的基本方程.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="旋转大气运动的基本方程.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -343,7 +348,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/CUG-hydro/CUG-HydroMeteorology/edit/master/index.Rmd",
+"link": "https://github.com/CUG-hydro/CUG-HydroMeteorology/edit/master/03-大气热力学.Rmd",
 "text": "Edit"
 },
 "history": {
