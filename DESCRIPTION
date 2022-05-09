@@ -1,10 +1,6 @@
-Package: JOPSbook
-Title: P-Spline
-Description: P-Spline.
-    Reference:
-    Hamed, K. H., & Rao, A. R. (1998). A modified Mann-Kendall trend test for 
-    autocorrelated data. Journal of hydrology, 204(1-4), 182-196. 
-    <doi:10.1016/S0022-1694(97)00125-X>.
+Package: HydroMeteorology
+Title: CUG-HydroMeteorology
+Description: CUG-HydroMeteorology.
 Version: 0.1.1
 Authors@R: c(
   person("Dongdong", "Kong", role = c("aut", "cre"), 
@@ -13,16 +9,11 @@ License: MIT + file LICENSE
 Imports: 
 Suggests: 
     rmarkdown, bookdown,
-    magrittr, data.table,
-    SemiPar, fields, spam, JOPS,
-    reshape2, metR,
-    gamair,
-    gridExtra,
     covr,
     testthat (>= 3.0.0)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
-URL: https://github.com/rpkgs/JOPSbook
-BugReports: https://github.com/rpkgs/JOPSbook/issues
+URL: https://github.com/CUG-hydro/CUG-HydroMeteorology
+BugReports: https://github.com/CUG-hydro/CUG-HydroMeteorology/issues
 Config/testthat/edition: 3

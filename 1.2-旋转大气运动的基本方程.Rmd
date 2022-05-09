@@ -39,19 +39,13 @@ $$
 $$
 
 `拉格朗日观点`和`欧拉观点`是同一事物的两种不同描述。证明：
-
 $$
-\begin{align}
-   \frac{\partial \rho}{\partial t}+\nabla \cdot (\rho \vec{V}) =0  \\ 
-   
-   (\frac{\partial \rho}{\partial t} + \vec{V} \nabla  \cdot \rho) + \rho \nabla\cdot\vec{V} =0 \notag \\
-
-   \frac{d \rho}{\partial t} +\rho \nabla \cdot  \vec{V}=0 \notag
-
-\end{align}
+   \begin{align}
+      \frac{\partial \rho}{\partial t}+\nabla \cdot (\rho \vec{V}) &=0  \\\\
+      (\frac{\partial \rho}{\partial t} + \vec{V} \nabla  \cdot \rho) + \rho \nabla\cdot\vec{V} &=0 \notag \\\\
+      \frac{d \rho}{\partial t} +\rho \nabla \cdot  \vec{V} &=0 \notag
+   \end{align}
 $$
-
-
 
 其中，$\nabla\cdot$：是求梯度的符号
 
@@ -132,7 +126,6 @@ $$
 $$
 
 <span style="color:red">why</span>
-
 $$
 \begin{align}
    dQ + \lambda d{q_s} &= C_p dT - \frac{RT}{p}dp \\

@@ -8,3 +8,5 @@ libs/
 _main_files/
 _book
 _bookdown_files
+
+*.pdf
