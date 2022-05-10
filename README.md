@@ -21,7 +21,29 @@
 - [ ] 交叉引用
 - [X] pandoc markdown转word
 
+## TODO: 
+
+### 1. 辐射与蒸发
+#### 夏季撑伞与否对人体感知温度的影响
+  
+  > 可能用到的理论：
+  > 1. **散射理论**
+  > 2. **蒸发理论**：湿表面与空气的温差
+
+### 2. 气象成因分析
+#### 工具
+
+  - `metpy`: <https://github.com/Unidata/MetPy>, <https://unidata.github.io/MetPy/latest/examples/index.html>
+  - `metR`: <https://github.com/eliocamp/metR>
+
+  #### 理论
+  - 位势高度场
+  - 水汽通量
+  - 锋生锋消
+  - Q矢量
+  - 涡度守恒
+
 
 # 参考文献
 
-- 1. 南京大学MOOC, 气象动力学，<https://open.163.com/newview/movie/free?pid=KFTN98Q57>
+1. 南京大学MOOC, 气象动力学，<https://open.163.com/newview/movie/free?pid=KFTN98Q57>
